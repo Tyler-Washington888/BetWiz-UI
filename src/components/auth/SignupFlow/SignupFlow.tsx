@@ -6,7 +6,8 @@ import ContactInfoCard from "./cards/ContactInfoCard";
 import BirthdateCard from "./cards/BirthdateCard";
 import PasswordCard from "./cards/PasswordCard";
 import NotAvailableMessage from "../../common/NotAvailableMessage";
-import ProgressIndicator from "../../common/ProgressIndicator";
+import StepIndicator from "../../common/StepIndicator";
+import SignupHeader from "../../common/SignupHeader";
 import "./SignupFlow.css";
 
 export interface SignupData {
@@ -94,8 +95,11 @@ const SignupFlow: React.FC = () => {
   return (
     <div className="signup-flow">
       <div className="signup-flow-container">
-        {/* Progress Indicator */}
-        <ProgressIndicator steps={progressSteps} currentStep={currentStep} />
+        {/* Header with Back Button and Logo */}
+        <SignupHeader onBack={prevStep} canGoBack={currentStep > 0} />
+
+        {/* Step Indicator */}
+        <StepIndicator currentStep={currentStep} totalSteps={steps.length} />
 
         {/* Current Step Component */}
         <div className="step-content">

@@ -67,14 +67,8 @@ const PersonalInfoCard: React.FC<PersonalInfoCardProps> = ({
   return (
     <div className="personal-info-card">
       <div className="card-header">
-        <div className="logo-section">
-          <div className="betwiz-logo">
-            <div className="logo-icon">🏆</div>
-            <h1 className="logo-text">BETWIZ</h1>
-          </div>
-        </div>
         <h2 className="card-title">Personal Information</h2>
-        <p className="card-subtitle">Tell us your name to get started</p>
+        <p className="card-subtitle">Tell us your details to get started</p>
       </div>
 
       <div className="card-content">

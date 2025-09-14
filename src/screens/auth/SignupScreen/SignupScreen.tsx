@@ -1,8 +1,12 @@
-import React from "react";
+import AuthLayout from "../../../components/layouts/AuthLayout";
 import SignupFlow from "../../../components/auth/SignupFlow";
 
 const SignupScreen: React.FC = () => {
-  return <SignupFlow />;
+  return (
+    <AuthLayout>
+      <SignupFlow />
+    </AuthLayout>
+  );
 };
 
 export default SignupScreen;

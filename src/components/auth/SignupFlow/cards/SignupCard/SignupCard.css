@@ -1,5 +1,5 @@
-/* Contact Info Card Styles */
-.contact-info-card {
+/* Signup Card Styles */
+.signup-card {
   width: 100%;
   height: 100%;
   display: flex;
@@ -18,6 +18,7 @@
   font-weight: 600;
   color: #333;
   margin: 0 0 8px 0;
+  text-align: center;
 }
 
 .card-subtitle {
@@ -113,7 +114,8 @@
   opacity: 0.6;
 }
 
-.next-button {
+.next-button,
+.submit-button {
   flex: 2;
   padding: 14px;
   background-color: #4caf50;
@@ -126,18 +128,104 @@
   transition: background-color 0.3s ease;
 }
 
-.next-button:hover:not(:disabled) {
+.next-button:hover:not(:disabled),
+.submit-button:hover:not(:disabled) {
   background-color: #45a049;
 }
 
-.next-button:disabled {
+.next-button:disabled,
+.submit-button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
 
+/* Single button (for first step) */
+.single-button {
+  width: 100%;
+  padding: 14px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.single-button:hover:not(:disabled) {
+  background-color: #45a049;
+}
+
+.single-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Password input container */
+.password-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-input {
+  padding-right: 50px; /* Make room for toggle button */
+}
+
+.password-toggle {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.password-toggle:hover {
+  background-color: #f0f0f0;
+}
+
+/* Input hint */
+.input-hint {
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+}
+
+/* Password requirements */
+.password-requirements {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 10px;
+}
+
+.password-requirements h4 {
+  margin: 0 0 8px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.password-requirements ul {
+  margin: 0;
+  padding-left: 16px;
+  color: #666;
+  font-size: 12px;
+}
+
+.password-requirements li {
+  margin-bottom: 4px;
+}
+
 /* Tablet styles */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-  .contact-info-card {
+  .signup-card {
     padding: 40px;
   }
 
@@ -151,7 +239,9 @@
   }
 
   .back-button,
-  .next-button {
+  .next-button,
+  .submit-button,
+  .single-button {
     padding: 16px;
     font-size: 18px;
   }
