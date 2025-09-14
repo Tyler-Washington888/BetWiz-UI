@@ -1,0 +1,119 @@
+/* Progress Indicator Styles */
+.progress-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+  gap: 8px;
+  overflow-x: auto;
+}
+
+.progress-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 80px;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+  position: relative;
+}
+
+.progress-step.active {
+  opacity: 1;
+}
+
+.progress-step.current {
+  opacity: 1;
+}
+
+.step-number {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #e9ecef;
+  color: #6c757d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.progress-step.active .step-number {
+  background: #4caf50;
+  color: white;
+}
+
+.progress-step.current .step-number {
+  background: #ff6b35;
+  color: white;
+  transform: scale(1.1);
+}
+
+.step-title {
+  font-size: 10px;
+  text-align: center;
+  color: #6c757d;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.progress-step.active .step-title {
+  color: #4caf50;
+  font-weight: 600;
+}
+
+.progress-step.current .step-title {
+  color: #ff6b35;
+  font-weight: 600;
+}
+
+/* Connecting lines between steps */
+.progress-step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  background: #e9ecef;
+  z-index: 1;
+  transform: translateX(16px);
+}
+
+.progress-step.active:not(:last-child)::after {
+  background: #4caf50;
+}
+
+.progress-step.current:not(:last-child)::after {
+  background: linear-gradient(to right, #ff6b35 50%, #e9ecef 50%);
+}
+
+/* Tablet styles */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .progress-indicator {
+    padding: 30px;
+    gap: 20px;
+  }
+
+  .step-number {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .step-title {
+    font-size: 12px;
+  }
+
+  .progress-step:not(:last-child)::after {
+    top: 20px;
+    transform: translateX(20px);
+  }
+}

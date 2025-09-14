@@ -1,0 +1,75 @@
+/* Mobile First - Default styles for mobile */
+.signup-flow {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.signup-flow-container {
+  width: 100%;
+  height: 100vh;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Progress Indicator styles are now in the ProgressIndicator component */
+
+/* Step Content */
+.step-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* Tablet styles */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .signup-flow-container {
+    max-width: 600px;
+    height: 90vh;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    margin: 5vh auto;
+  }
+
+  .step-content {
+    padding: 40px;
+  }
+}
+
+/* Desktop - Show not available message */
+@media screen and (min-width: 1025px) {
+  .signup-flow {
+    background: #f5f5f5;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .signup-flow-container {
+    display: none;
+  }
+
+  .desktop-not-available {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+.desktop-not-available {
+  display: none;
+}
