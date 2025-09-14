@@ -1,0 +1,166 @@
+/* Mobile First - Default styles for mobile */
+.dashboard {
+  min-height: 100vh;
+  background: #f8f9fa;
+}
+
+.dashboard-header {
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px 20px;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-icon {
+  font-size: 24px;
+  color: #4caf50;
+}
+
+.logo-text {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ff6b35;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.welcome-text {
+  font-size: 14px;
+  color: #666;
+  display: none; /* Hide on mobile to save space */
+}
+
+.logout-button {
+  padding: 8px 16px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #d32f2f;
+}
+
+.dashboard-main {
+  padding: 20px;
+}
+
+.dashboard-content h2 {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.dashboard-content p {
+  color: #666;
+  margin-bottom: 30px;
+  font-size: 16px;
+}
+
+.feature-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.feature-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.feature-card h3 {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.feature-card p {
+  color: #666;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Tablet styles */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .dashboard-header {
+    padding: 20px 30px;
+  }
+
+  .logo-text {
+    font-size: 24px;
+  }
+
+  .welcome-text {
+    display: block;
+    font-size: 16px;
+  }
+
+  .dashboard-main {
+    padding: 30px;
+  }
+
+  .feature-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .feature-card {
+    padding: 25px;
+  }
+
+  .feature-card h3 {
+    font-size: 20px;
+  }
+
+  .feature-card p {
+    font-size: 16px;
+  }
+}
+
+/* Desktop - Show not available message */
+@media screen and (min-width: 1025px) {
+  .dashboard {
+    display: none;
+  }
+
+  .not-available-message {
+    color: #666;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  .not-available-message h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+
+  .not-available-message p {
+    margin-bottom: 15px;
+  }
+}

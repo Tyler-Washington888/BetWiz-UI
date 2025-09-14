@@ -1,0 +1,181 @@
+/* Mobile First - Default styles for mobile */
+.signup-form {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100%;
+}
+
+.logo-section {
+  text-align: center;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.betwiz-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.logo-icon {
+  font-size: 48px;
+  color: #4caf50;
+}
+
+.logo-text {
+  font-size: 32px;
+  font-weight: bold;
+  color: #ff6b35;
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+.form-container {
+  margin-bottom: 25px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-label {
+  display: block;
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #ff6b35;
+}
+
+.form-input::placeholder {
+  color: #999;
+}
+
+.error-message {
+  color: #f44336;
+  font-size: 14px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.signup-button {
+  width: 100%;
+  padding: 14px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.signup-button:hover:not(:disabled) {
+  background-color: #45a049;
+}
+
+.signup-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.login-section {
+  text-align: center;
+}
+
+.login-text {
+  color: #333;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.login-link {
+  display: inline-block;
+  padding: 14px 30px;
+  background-color: #4caf50;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.login-link:hover {
+  background-color: #45a049;
+}
+
+/* Tablet styles */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .signup-form {
+    max-width: 450px;
+    padding: 30px;
+  }
+
+  .logo-icon {
+    font-size: 56px;
+  }
+
+  .logo-text {
+    font-size: 36px;
+  }
+
+  .form-input {
+    padding: 14px 18px;
+    font-size: 18px;
+  }
+
+  .signup-button,
+  .login-link {
+    padding: 16px;
+    font-size: 18px;
+  }
+}
+
+/* Desktop - Show not available message */
+@media screen and (min-width: 1025px) {
+  .signup-form {
+    display: none;
+  }
+
+  .not-available-message {
+    color: #666;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  .not-available-message h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+
+  .not-available-message p {
+    margin-bottom: 15px;
+  }
+}
