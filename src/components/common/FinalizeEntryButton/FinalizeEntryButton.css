@@ -1,39 +1,59 @@
 .finalize-entry-button-container {
   position: fixed;
+  bottom: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-  padding: 16px 20px calc(16px + env(safe-area-inset-bottom));
-  background: rgba(248, 249, 250, 0.92);
-  backdrop-filter: blur(8px);
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
-  z-index: 900;
-}
+  padding: 16px 20px;
+  border-top: 1px solid #e0e0e0;
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  /* Add safe area padding for devices with home indicators */
+  padding-bottom: calc(16px + env(safe-area-inset-bottom));
 
-.finalize-entry-button {
-  width: 100%;
-  border: none;
-  border-radius: 12px;
-  padding: 16px;
+  border-radius: 0;
   font-size: 16px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: transform 0.15s ease, opacity 0.15s ease;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-height: 60px;
+  justify-content: center;
 }
 
-.finalize-entry-button.enabled {
-  background: #5dd8a1;
-  color: #0b2b1d;
+.finalize-entry-button-container.enabled {
+  background: #f97316;
+  color: white;
+  box-shadow: 0 4px 16px rgba(249, 115, 22, 0.3);
 }
 
-.finalize-entry-button.disabled {
-  background: #e5e7eb;
-  color: #6b7280;
+.finalize-entry-button-container.enabled:hover {
+  background: #ea580c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(249, 115, 22, 0.4);
+}
+
+.finalize-entry-button-container.enabled:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(249, 115, 22, 0.3);
+}
+
+.finalize-entry-button-container.disabled {
+  background: #d1d5db;
+  color: white;
   cursor: not-allowed;
+  border: 2px solid #d1d5db;
 }
 
-.finalize-entry-button.enabled:active {
-  transform: translateY(1px);
+.button-text {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.picks-count {
+  font-size: 14px;
+  opacity: 0.8;
 }
 
 
