@@ -3,6 +3,7 @@ import { UserAccount } from "../../../contexts/UserContext";
 import DepositModal from "../DepositModal/DepositModal";
 import Logo from "../Logo/Logo";
 import "./HamburgerMenu.css";
+import bet360Logo from "../../../assets/bet360-logo.svg";
 
 interface HamburgerMenuProps {
   onClose: () => void;
@@ -58,7 +59,7 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
         {!userAccount.linkedToBet360 && (
           <button className="download-bet360-btn" onClick={onDownloadBet360}>
             <img
-              src="/src/assets/bet360-logo.png"
+              src={bet360Logo}
               alt="Bet360 Logo"
               className="bet360-logo download-bet360-logo"
             />

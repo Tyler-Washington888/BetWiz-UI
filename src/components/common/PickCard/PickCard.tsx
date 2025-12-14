@@ -9,6 +9,7 @@ export interface Pick {
     lastName: string;
     team: string;
     position: string;
+    imageUrl?: string;
   };
   game: {
     _id: string;
@@ -47,6 +48,7 @@ const PickCard: React.FC<PickCardProps> = ({
   };
 
   const getPlayerImageUrl = () => {
+    if (pick.player.imageUrl) return pick.player.imageUrl;
     return `https://via.placeholder.com/150x150/4A90E2/FFFFFF?text=${pick.player.firstName.charAt(
       0
     )}${pick.player.lastName.charAt(0)}`;
@@ -66,6 +68,13 @@ const PickCard: React.FC<PickCardProps> = ({
           src={getPlayerImageUrl()}
           alt={`${pick.player.firstName} ${pick.player.lastName}`}
           className="player-image"
+          onError={(e) => {
+            const img = e.currentTarget;
+            img.onerror = null;
+            img.src = `https://via.placeholder.com/150x150/4A90E2/FFFFFF?text=${pick.player.firstName.charAt(
+              0
+            )}${pick.player.lastName.charAt(0)}`;
+          }}
         />
       </div>
 

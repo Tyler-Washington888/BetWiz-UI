@@ -1,6 +1,6 @@
 import React from "react";
 import "./Bet360Banner.css";
-import bet360Logo from "../../../assets/bet360-logo.png";
+import bet360Logo from "../../../assets/bet360-logo.svg";
 
 interface Bet360BannerProps {
   onDownloadBet360: () => void;
