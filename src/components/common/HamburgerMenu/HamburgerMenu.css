@@ -8,16 +8,18 @@
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: center;
   z-index: 1000;
   padding: 20px;
+  padding-top: 40px;
 }
 
 .hamburger-menu-popup {
   background: white;
   border-radius: 16px;
   padding: 24px;
-  width: 100%; /* Full width of the page */
+  width: 100%;
+  max-width: 430px; /* Largest iPhone width */
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
@@ -224,10 +226,11 @@
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .hamburger-overlay {
     padding: 40px;
+    padding-top: 60px;
   }
 
   .hamburger-menu-popup {
-    max-width: 400px;
+    max-width: 430px;
     padding: 32px;
   }
 
@@ -275,10 +278,11 @@
 @media screen and (min-width: 1025px) {
   .hamburger-overlay {
     padding: 60px;
+    padding-top: 80px;
   }
 
   .hamburger-menu-popup {
-    max-width: 450px;
+    max-width: 430px;
     padding: 40px;
   }
 
