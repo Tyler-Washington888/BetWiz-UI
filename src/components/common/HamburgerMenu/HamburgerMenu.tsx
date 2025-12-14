@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { UserAccount } from "../../../contexts/UserContext";
-import DepositModal from "../DepositModal/DepositModal";
+import DepositModal from "../DepositModal";
 import Logo from "../Logo/Logo";
 import "./HamburgerMenu.css";
 import bet360Logo from "../../../assets/bet360-logo.svg";

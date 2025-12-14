@@ -114,12 +114,23 @@
 }
 
 /* Small iPad (iPad Mini: 768px) */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   .dashboard-content {
     padding: 40px;
   }
   
   .dashboard-screen {
     padding-bottom: calc(120px + env(safe-area-inset-bottom)); /* More space on larger screens */
+  }
+}
+
+/* Large iPad (iPad Pro 12.9": 1024px - 1366px) */
+@media screen and (min-width: 1024px) and (max-width: 1366px) {
+  .dashboard-content {
+    padding: 50px;
+  }
+  
+  .dashboard-screen {
+    padding-bottom: calc(120px + env(safe-area-inset-bottom));
   }
 }

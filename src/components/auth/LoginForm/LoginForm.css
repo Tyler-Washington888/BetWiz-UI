@@ -157,7 +157,6 @@
     padding: 30px;
   }
 
-
   .form-input {
     padding: 14px 18px;
     font-size: 18px;
@@ -170,8 +169,27 @@
   }
 }
 
+/* Large iPad (iPad Pro 12.9": 1024px - 1366px) */
+@media screen and (min-width: 1024px) and (max-width: 1366px) {
+  .login-form {
+    max-width: 500px;
+    padding: 40px;
+  }
+
+  .form-input {
+    padding: 16px 20px;
+    font-size: 18px;
+  }
+
+  .login-button,
+  .signup-button {
+    padding: 18px;
+    font-size: 18px;
+  }
+}
+
 /* Desktop - Show not available message */
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1367px) {
   .login-form {
     display: none;
   }

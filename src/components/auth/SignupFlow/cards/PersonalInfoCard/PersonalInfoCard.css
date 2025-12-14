@@ -127,3 +127,24 @@
     font-size: 18px;
   }
 }
+
+/* Large iPad (iPad Pro 12.9": 1024px - 1366px) */
+@media screen and (min-width: 1024px) and (max-width: 1366px) {
+  .personal-info-card {
+    padding: 50px;
+  }
+
+  .card-title {
+    font-size: 30px;
+  }
+
+  .form-input {
+    padding: 16px 20px;
+    font-size: 18px;
+  }
+
+  .next-button {
+    padding: 18px;
+    font-size: 18px;
+  }
+}

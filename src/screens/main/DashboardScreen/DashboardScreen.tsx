@@ -6,9 +6,9 @@ import DashboardHeader from "../../../components/common/DashboardHeader/Dashboar
 import HamburgerMenu from "../../../components/common/HamburgerMenu/HamburgerMenu";
 import Bet360Banner from "../../../components/common/Bet360Banner/Bet360Banner";
 import PickGrid from "../../../components/common/PickGrid/PickGrid";
-import FinalizeEntryButton from "../../../components/common/FinalizeEntryButton/FinalizeEntryButton";
-import FinalizeEntry from "../../../components/common/FinalizeEntry/FinalizeEntry";
-import DepositModal from "../../../components/common/DepositModal/DepositModal";
+import FinalizeEntryButton from "../../../components/common/FinalizeEntryButton";
+import FinalizeEntry from "../../../components/common/FinalizeEntry";
+import DepositModal from "../../../components/common/DepositModal";
 import { getAvailablePicks } from "../../../services/pickApi";
 import { Pick } from "../../../components/common/PickCard";
 import { createEntry } from "../../../services/entryApi";
@@ -211,7 +211,7 @@ const DashboardScreen: React.FC = () => {
           <div className="loading-container">
             <div className="loading-spinner"></div>
             <p>Loading picks...</p>
-          </div>
+            </div>
         )}
 
         {picksError && (
