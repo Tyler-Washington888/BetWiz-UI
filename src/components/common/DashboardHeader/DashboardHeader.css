@@ -1,0 +1,148 @@
+/* Mobile First Dashboard Header */
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hamburger-line {
+  width: 24px;
+  height: 3px;
+  background-color: #333;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger-menu:hover .hamburger-line {
+  background-color: #5dd8a1;
+}
+
+/* Back Arrow */
+.back-arrow {
+  font-size: 24px;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.hamburger-menu:hover .back-arrow {
+  color: #5dd8a1;
+}
+
+/* Logo Section */
+.logo-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.betwiz-logo {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.bet {
+  color: #333;
+  margin-right: 4px;
+}
+
+.wiz {
+  color: #ff5c40;
+}
+
+/* Account Section */
+.account-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.account-balance {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.add-money-btn {
+  width: 32px;
+  height: 32px;
+  background-color: #5dd8a1;
+  border: none;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-money-btn:hover {
+  background-color: #5dd8a1;
+}
+
+.plus-icon {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+/* Tablet styles */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .dashboard-header {
+    padding: 20px 40px;
+  }
+
+  .betwiz-logo {
+    font-size: 24px;
+  }
+
+  .account-balance {
+    font-size: 18px;
+  }
+
+  .add-money-btn {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* Desktop styles */
+@media screen and (min-width: 1025px) {
+  .dashboard-header {
+    padding: 24px 60px;
+  }
+
+  .betwiz-logo {
+    font-size: 28px;
+  }
+
+  .account-balance {
+    font-size: 20px;
+  }
+
+  .add-money-btn {
+    width: 40px;
+    height: 40px;
+  }
+}

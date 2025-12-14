@@ -35,6 +35,7 @@ export interface AuthResponse {
   linkedBet360Account: boolean;
   role: string;
   token: string;
+  creditBalance: number;
 }
 
 export const loginUser = async (loginData: LoginData): Promise<User> => {

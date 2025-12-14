@@ -1,22 +1,28 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import Logo from "../Logo/Logo";
 import "./SignupHeader.css";
 
 interface SignupHeaderProps {
   onBack: () => void;
   canGoBack: boolean;
+  showSignIn?: boolean;
 }
 
-const SignupHeader: React.FC<SignupHeaderProps> = ({ onBack, canGoBack }) => {
+const SignupHeader: React.FC<SignupHeaderProps> = ({ onBack, canGoBack, showSignIn = false }) => {
   return (
     <div className="signup-header">
-      <button className="back-button" onClick={onBack} disabled={!canGoBack}>
-        ←
-      </button>
+      {showSignIn ? (
+        <Link to="/login" className="signin-button-header">
+          Sign In
+        </Link>
+      ) : (
+        <button className="back-button" onClick={onBack} disabled={!canGoBack}>
+          ←
+        </button>
+      )}
       <div className="logo-section">
-        <div className="betwiz-logo">
-          <div className="logo-icon">🏆</div>
-          <div className="logo-text">BETWIZ</div>
-        </div>
+        <Logo size="medium" />
       </div>
     </div>
   );

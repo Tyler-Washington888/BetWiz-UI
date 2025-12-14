@@ -5,7 +5,6 @@ import PersonalInfoCard from "./cards/PersonalInfoCard";
 import ContactInfoCard from "./cards/ContactInfoCard";
 import BirthdateCard from "./cards/BirthdateCard";
 import PasswordCard from "./cards/PasswordCard";
-import NotAvailableMessage from "../../common/NotAvailableMessage";
 import StepIndicator from "../../common/StepIndicator";
 import SignupHeader from "../../common/SignupHeader";
 import "./SignupFlow.css";
@@ -45,11 +44,6 @@ const SignupFlow: React.FC = () => {
     { id: "birthdate", title: "Date of Birth", component: BirthdateCard },
     { id: "password", title: "Create Password", component: PasswordCard },
   ];
-
-  const progressSteps = steps.map((step) => ({
-    id: step.id,
-    title: step.title,
-  }));
 
   const updateSignupData = (field: keyof SignupData, value: string) => {
     setSignupData((prev) => ({
@@ -96,7 +90,7 @@ const SignupFlow: React.FC = () => {
     <div className="signup-flow">
       <div className="signup-flow-container">
         {/* Header with Back Button and Logo */}
-        <SignupHeader onBack={prevStep} canGoBack={currentStep > 0} />
+        <SignupHeader onBack={prevStep} canGoBack={currentStep > 0} showSignIn={currentStep === 0} />
 
         {/* Step Indicator */}
         <StepIndicator currentStep={currentStep} totalSteps={steps.length} />
@@ -115,9 +109,6 @@ const SignupFlow: React.FC = () => {
             error={error}
           />
         </div>
-      </div>
-      <div className="desktop-not-available">
-        <NotAvailableMessage />
       </div>
     </div>
   );

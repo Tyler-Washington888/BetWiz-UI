@@ -26,6 +26,21 @@
   cursor: not-allowed;
 }
 
+.signin-button-header {
+  padding: 8px 16px;
+  background-color: #5dd8a1;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.signin-button-header:hover {
+  background-color: #4bc890;
+}
+
 .logo-section {
   position: absolute;
   left: 50%;
@@ -35,35 +50,9 @@
   align-items: center;
 }
 
-.betwiz-logo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-}
-
-.logo-icon {
-  font-size: 24px;
-}
-
-.logo-text {
-  font-size: 24px;
-  font-weight: bold;
-  color: #ff6b35;
-  letter-spacing: 1px;
-}
-
 /* Tablet styles */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .signup-header {
     padding: 30px;
-  }
-
-  .logo-text {
-    font-size: 28px;
-  }
-
-  .logo-icon {
-    font-size: 28px;
   }
 }

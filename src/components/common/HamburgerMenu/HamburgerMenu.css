@@ -1,0 +1,323 @@
+/* Mobile First Hamburger Menu */
+.hamburger-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.hamburger-menu-popup {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  width: 100%; /* Full width of the page */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 8px; /* Moved further up */
+  right: 8px; /* Moved further to the right */
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #666;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+.close-btn:hover {
+  background-color: #f5f5f5;
+}
+
+/* Balance Card */
+.balance-card {
+  background: #f0f8f0;
+  border: 1px solid #5dd8a1;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.balance-row {
+  display: flex;
+  justify-content: center; /* Center the balance */
+  align-items: center;
+}
+
+.balance-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.balance-label {
+  font-size: 14px;
+  color: #5dd8a1;
+  font-weight: 600;
+}
+
+.balance-amount {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.deposit-btn {
+  width: 100%;
+  background-color: #ff5c40;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.deposit-btn:hover {
+  background-color: #e55a2b;
+}
+
+/* Download Bet360 Button */
+.download-bet360-btn {
+  width: 100%;
+  background-color: #180330;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(24, 3, 48, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  position: relative;
+}
+
+.download-bet360-btn::before {
+  content: "Download Bet360";
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  pointer-events: none;
+}
+
+.download-bet360-btn:hover {
+  background-color: #180330;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(24, 3, 48, 0.4);
+}
+
+.download-bet360-btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 20px rgba(249, 4, 116, 0.6);
+  background-color: #180330;
+}
+
+.download-bet360-btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.download-bet360-btn:active::after {
+  width: 300px;
+  height: 300px;
+}
+
+.download-bet360-btn span {
+  opacity: 0;
+}
+
+.bet360-logo {
+  width: 40px;
+  height: 40px;
+  filter: brightness(0) invert(1);
+}
+
+.download-bet360-logo {
+  width: 80px;
+  height: 50px;
+  filter: none;
+}
+
+/* Menu Footer */
+.menu-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.logout-btn {
+  background-color: #5dd8a1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  min-width: 120px;
+}
+
+.logout-btn:hover {
+  background-color: #5dd8a1;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.footer-logo .bet {
+  color: #333;
+  margin-right: 4px;
+}
+
+.footer-logo .wiz {
+  color: #ff5c40;
+}
+
+/* Tablet styles */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .hamburger-overlay {
+    padding: 40px;
+  }
+
+  .hamburger-menu-popup {
+    max-width: 400px;
+    padding: 32px;
+  }
+
+  .balance-card {
+    padding: 24px;
+  }
+
+  .balance-amount {
+    font-size: 20px;
+  }
+
+  .deposit-btn {
+    padding: 14px;
+    font-size: 18px;
+  }
+
+  .download-bet360-btn {
+    padding: 10px 18px;
+    font-size: 16px;
+    width: 100%;
+  }
+
+  .download-bet360-btn::before {
+    font-size: 16px;
+  }
+
+  .bet360-logo {
+    width: 48px;
+    height: 48px;
+  }
+
+  .download-bet360-logo {
+    width: 100px;
+    height: 70px;
+  }
+
+  .logout-btn {
+    padding: 12px 28px;
+    font-size: 16px;
+    min-width: 140px;
+  }
+}
+
+/* Desktop styles */
+@media screen and (min-width: 1025px) {
+  .hamburger-overlay {
+    padding: 60px;
+  }
+
+  .hamburger-menu-popup {
+    max-width: 450px;
+    padding: 40px;
+  }
+
+  .balance-card {
+    padding: 28px;
+  }
+
+  .balance-amount {
+    font-size: 22px;
+  }
+
+  .deposit-btn {
+    padding: 16px;
+    font-size: 20px;
+  }
+
+  .download-bet360-btn {
+    padding: 12px 20px;
+    font-size: 18px;
+    width: 100%;
+  }
+
+  .download-bet360-btn::before {
+    font-size: 18px;
+  }
+
+  .bet360-logo {
+    width: 56px;
+    height: 56px;
+  }
+
+  .download-bet360-logo {
+    width: 120px;
+    height: 80px;
+  }
+
+  .logout-btn {
+    padding: 14px 32px;
+    font-size: 18px;
+    min-width: 160px;
+  }
+}

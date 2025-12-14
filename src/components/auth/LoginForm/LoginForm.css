@@ -6,16 +6,8 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   min-height: 100%;
-}
-
-.logo-section {
-  text-align: center;
-  margin-bottom: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .betwiz-logo {
@@ -25,19 +17,7 @@
   justify-content: center;
   gap: 10px;
   width: 100%;
-}
-
-.logo-icon {
-  font-size: 48px;
-  color: #4caf50;
-}
-
-.logo-text {
-  font-size: 32px;
-  font-weight: bold;
-  color: #ff6b35;
-  margin: 0;
-  letter-spacing: 2px;
+  margin-bottom: 25px;
 }
 
 .form-container {
@@ -68,7 +48,7 @@
 
 .form-input:focus {
   outline: none;
-  border-color: #ff6b35;
+  border-color: #ff5c40;
 }
 
 .form-input::placeholder {
@@ -108,7 +88,7 @@
 }
 
 .password-toggle:focus {
-  outline: 2px solid #ff6b35;
+  outline: 2px solid #ff5c40;
   outline-offset: 2px;
 }
 
@@ -122,7 +102,7 @@
 .login-button {
   width: 100%;
   padding: 14px;
-  background-color: #4caf50;
+  background-color: #5dd8a1;
   color: white;
   border: none;
   border-radius: 8px;
@@ -133,7 +113,7 @@
 }
 
 .login-button:hover:not(:disabled) {
-  background-color: #45a049;
+  background-color: #5dd8a1;
 }
 
 .login-button:disabled {
@@ -152,19 +132,22 @@
 }
 
 .signup-button {
-  display: inline-block;
-  padding: 14px 30px;
-  background-color: #4caf50;
+  display: block;
+  width: 100%;
+  padding: 14px;
+  background-color: #5dd8a1;
   color: white;
   text-decoration: none;
   border-radius: 8px;
   font-size: 16px;
   font-weight: 600;
   transition: background-color 0.3s ease;
+  text-align: center;
+  box-sizing: border-box;
 }
 
 .signup-button:hover {
-  background-color: #45a049;
+  background-color: #5dd8a1;
 }
 
 /* Tablet styles */
@@ -174,13 +157,6 @@
     padding: 30px;
   }
 
-  .logo-icon {
-    font-size: 56px;
-  }
-
-  .logo-text {
-    font-size: 36px;
-  }
 
   .form-input {
     padding: 14px 18px;

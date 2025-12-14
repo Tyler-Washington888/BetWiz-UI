@@ -1,0 +1,48 @@
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.betwiz-logo {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.betwiz-logo.logo-small {
+  width: 80px;
+  height: auto;
+}
+
+.betwiz-logo.logo-medium {
+  width: 120px;
+  height: auto;
+}
+
+.betwiz-logo.logo-large {
+  width: 160px;
+  height: auto;
+}
+
+/* Horizontal logo styles */
+.betwiz-horizontal-logo {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.betwiz-horizontal-logo.logo-small {
+  width: 80px;
+  height: auto;
+}
+
+.betwiz-horizontal-logo.logo-medium {
+  width: 120px;
+  height: auto;
+}
+
+.betwiz-horizontal-logo.logo-large {
+  width: 160px;
+  height: auto;
+}

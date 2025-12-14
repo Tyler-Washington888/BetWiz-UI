@@ -1,0 +1,213 @@
+/* Mobile First Pick Card Styles */
+.pick-card {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  border: 2px solid #e0e0e0;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  min-height: 280px;
+  position: relative;
+  cursor: pointer;
+}
+
+.pick-card.selected {
+  border-color: #5dd8a1; /* Green border when selected */
+  box-shadow: 0 0 20px rgba(93, 216, 161, 0.6), 0 0 40px rgba(93, 216, 161, 0.4),
+    0 4px 16px rgba(93, 216, 161, 0.2);
+  animation: glow-pulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow-pulse {
+  0% {
+    box-shadow: 0 0 20px rgba(93, 216, 161, 0.6),
+      0 0 40px rgba(93, 216, 161, 0.4), 0 4px 16px rgba(93, 216, 161, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 30px rgba(93, 216, 161, 0.8),
+      0 0 60px rgba(93, 216, 161, 0.6), 0 6px 20px rgba(93, 216, 161, 0.3);
+  }
+}
+
+/* Player Image */
+.player-image-container {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 4px;
+  border: 3px solid #d1d5db; /* Grey border */
+  transition: border-color 0.3s ease;
+}
+
+.pick-card.selected .player-image-container {
+  border-color: #5dd8a1; /* Green border when selected */
+}
+
+.player-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Apply greyed out styling to all player images by default */
+  filter: grayscale(100%) brightness(0.7);
+  opacity: 0.8;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+/* When card is selected, remove greyed out effect */
+.pick-card.selected .player-image {
+  filter: none; /* Remove grayscale and brightness filters */
+  opacity: 1; /* Full opacity */
+}
+
+/* Fallback image styling for players without imageUrl */
+.player-image.fallback-image {
+  background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #6b7280;
+}
+
+/* Player Info Container */
+.player-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Player Name */
+.player-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 2px;
+}
+
+/* Matchup */
+.matchup {
+  font-size: 14px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 2px;
+}
+
+/* Stat Line */
+.stat-line {
+  font-size: 14px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  width: 100%;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.action-btn {
+  flex: 1;
+  padding: 12px 8px;
+  border-radius: 8px;
+  border: 2px solid #e0e0e0;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: white;
+  color: #333;
+}
+
+.less-btn.selected {
+  background: #ef4444;
+  color: white;
+  border-color: #ef4444;
+}
+
+.more-btn.selected {
+  background: #5dd8a1;
+  color: white;
+  border-color: #5dd8a1;
+}
+
+.action-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.action-btn:active {
+  transform: translateY(0);
+}
+
+/* Tablet styles */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .pick-card {
+    padding: 20px;
+    gap: 10px;
+    min-height: 320px;
+    border-radius: 16px;
+  }
+
+  .player-image-container {
+    width: 100px;
+    height: 100px;
+    border: 4px solid #d1d5db; /* Slightly thicker border for tablet */
+  }
+
+  .player-name {
+    font-size: 18px;
+  }
+
+  .matchup,
+  .stat-line {
+    font-size: 16px;
+  }
+
+  .action-btn {
+    padding: 14px 12px;
+    font-size: 16px;
+    border-radius: 10px;
+  }
+}
+
+/* Desktop styles */
+@media screen and (min-width: 1025px) {
+  .pick-card {
+    padding: 24px;
+    gap: 12px;
+    min-height: 360px;
+    border-radius: 20px;
+  }
+
+  .player-image-container {
+    width: 120px;
+    height: 120px;
+    border: 5px solid #d1d5db; /* Thicker border for desktop */
+  }
+
+  .player-name {
+    font-size: 20px;
+  }
+
+  .matchup,
+  .stat-line {
+    font-size: 18px;
+  }
+
+  .action-btn {
+    padding: 16px 14px;
+    font-size: 18px;
+    border-radius: 12px;
+  }
+}
