@@ -38,6 +38,30 @@ export interface AuthResponse {
   creditBalance: number;
 }
 
+const formatDateOfBirthForApi = (dateOfBirthRaw: string): string => {
+  const dob = (dateOfBirthRaw || "").trim();
+
+  // Native <input type="date"> gives YYYY-MM-DD
+  if (/^\d{4}-\d{2}-\d{2}$/.test(dob)) {
+    const [yyyy, mm, dd] = dob.split("-");
+    return `${mm}-${dd}-${yyyy}`;
+  }
+
+  // Handle common variants
+  if (/^\d{2}\/\d{2}\/\d{4}$/.test(dob)) {
+    const [mm, dd, yyyy] = dob.split("/");
+    return `${mm}-${dd}-${yyyy}`;
+  }
+
+  if (/^\d{4}\/\d{2}\/\d{2}$/.test(dob)) {
+    const [yyyy, mm, dd] = dob.split("/");
+    return `${mm}-${dd}-${yyyy}`;
+  }
+
+  // Already in the backend format (MM-DD-YYYY) or unknown; pass through.
+  return dob;
+};
+
 export const loginUser = async (loginData: LoginData): Promise<User> => {
   const resp = await api.post<AuthResponse>("/api/users/login", loginData);
   localStorage.setItem("authToken", resp.data.token);
@@ -51,9 +75,14 @@ export const loginUser = async (loginData: LoginData): Promise<User> => {
 export const registerUser = async (
   registerData: RegisterData
 ): Promise<User> => {
+  const payload: RegisterData = {
+    ...registerData,
+    dateOfBirth: formatDateOfBirthForApi(registerData.dateOfBirth),
+  };
+
   const resp = await api.post<AuthResponse>(
-    "/api/users/register",
-    registerData
+    "/api/users/signup",
+    payload
   );
   localStorage.setItem("authToken", resp.data.token);
   api.defaults.headers.common.authorization = `Bearer ${resp.data.token}`;
@@ -67,7 +96,7 @@ export const verifyUser = async (): Promise<User | null> => {
   const token = localStorage.getItem("authToken");
   if (token) {
     api.defaults.headers.common.authorization = `Bearer ${token}`;
-    const resp = await api.get<User>("/api/users/my-data");
+    const resp = await api.get<User>("/api/users/profile");
     return resp.data;
   }
   return null;

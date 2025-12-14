@@ -1,6 +1,6 @@
 /* Mobile First - Default styles for mobile */
 .signup-flow {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background: #f8f9fa;
   display: flex;
@@ -36,6 +36,15 @@
   overflow-x: hidden;
   padding: 20px;
   height: calc(100vh - 120px);
+  /* Prevent horizontal shifting between steps when scrollbars appear/disappear */
+  scrollbar-gutter: stable;
+}
+
+/* Fallback for browsers without scrollbar-gutter support: always reserve scrollbar space */
+@supports not (scrollbar-gutter: stable) {
+  .step-content {
+    overflow-y: scroll;
+  }
 }
 
 /* Small iPhone (iPhone 12/13/14: 390px) */

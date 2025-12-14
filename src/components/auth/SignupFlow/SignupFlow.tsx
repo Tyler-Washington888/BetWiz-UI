@@ -78,7 +78,11 @@ const SignupFlow: React.FC = () => {
       );
       navigate("/dashboard");
     } catch (err) {
-      setError("Failed to create account. Please try again.");
+      const apiError =
+        (err as any)?.response?.data?.error ||
+        (err as any)?.response?.data?.message ||
+        "Failed to create account. Please try again.";
+      setError(apiError);
     } finally {
       setLoading(false);
     }

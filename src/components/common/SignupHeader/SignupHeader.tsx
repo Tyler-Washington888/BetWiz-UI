@@ -22,7 +22,7 @@ const SignupHeader: React.FC<SignupHeaderProps> = ({ onBack, canGoBack, showSign
         </button>
       )}
       <div className="logo-section">
-        <Logo size="medium" />
+        <Logo size="medium" variant="horizontal" />
       </div>
     </div>
   );

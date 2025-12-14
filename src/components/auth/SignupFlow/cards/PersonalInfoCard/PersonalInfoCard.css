@@ -57,7 +57,7 @@
 
 .form-input:focus {
   outline: none;
-  border-color: #4caf50;
+  border-color: #5dd8a1;
 }
 
 .form-input.error {
@@ -87,7 +87,7 @@
 .next-button {
   width: 100%;
   padding: 14px;
-  background-color: #4caf50;
+  background-color: #5dd8a1;
   color: white;
   border: none;
   border-radius: 8px;
@@ -99,7 +99,7 @@
 }
 
 .next-button:hover:not(:disabled) {
-  background-color: #45a049;
+  background-color: #4bc890;
 }
 
 .next-button:disabled {

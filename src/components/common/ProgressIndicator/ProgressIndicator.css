@@ -46,7 +46,7 @@
 }
 
 .progress-step.active .step-number {
-  background: #4caf50;
+  background: #5dd8a1;
   color: white;
 }
 
@@ -65,7 +65,7 @@
 }
 
 .progress-step.active .step-title {
-  color: #4caf50;
+  color: #5dd8a1;
   font-weight: 600;
 }
 
@@ -88,7 +88,7 @@
 }
 
 .progress-step.active:not(:last-child)::after {
-  background: #4caf50;
+  background: #5dd8a1;
 }
 
 .progress-step.current:not(:last-child)::after {

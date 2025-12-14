@@ -27,18 +27,19 @@
 }
 
 .signin-button-header {
-  padding: 8px 16px;
-  background-color: #5dd8a1;
-  color: white;
+  padding: 8px 0;
+  background: transparent;
+  color: #5dd8a1;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 0;
   font-size: 16px;
   font-weight: 600;
-  transition: background-color 0.3s ease;
+  transition: color 0.2s ease;
 }
 
 .signin-button-header:hover {
-  background-color: #4bc890;
+  color: #4bc890;
+  text-decoration: underline;
 }
 
 .logo-section {
@@ -48,6 +49,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  max-width: 220px;
+  width: 60%;
 }
 
 /* Tablet styles */
