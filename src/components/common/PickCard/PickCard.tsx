@@ -78,14 +78,16 @@ const PickCard: React.FC<PickCardProps> = ({
         />
       </div>
 
-      <div className="player-name">
-        {pick.player.firstName} {pick.player.lastName}
-      </div>
+      <div className="player-info">
+        <div className="player-name">
+          {pick.player.firstName} {pick.player.lastName}
+        </div>
 
-      <div className="matchup">vs {getOpponentTeam()}</div>
+        <div className="matchup">vs {getOpponentTeam()}</div>
 
-      <div className="stat-line">
-        {pick.line} {formatStatType(pick.statType)}
+        <div className="stat-line">
+          {pick.line} {formatStatType(pick.statType)}
+        </div>
       </div>
 
       <div className="action-buttons">
