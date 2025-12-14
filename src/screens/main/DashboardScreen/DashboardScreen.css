@@ -1,16 +1,18 @@
 /* Mobile First Dashboard Styles */
 .dashboard-screen {
   width: 100%;
-  min-height: 100vh;
   background-color: #f8f9fa;
-  display: flex;
-  flex-direction: column;
+  display: block;
+  overflow-x: hidden;
+  position: relative;
+  /* Button height: min-height 60px + padding 16px top + 16px bottom + safe area = ~92px minimum */
+  padding-bottom: calc(100px + env(safe-area-inset-bottom)); /* Enough space for fixed button at 100% zoom */
+  min-height: 100vh;
 }
 
 .dashboard-content {
-  flex: 1;
+  width: 100%;
   padding: 20px;
-  padding-bottom: 120px; /* Add bottom padding for fixed finalize button */
   transition: filter 0.3s ease;
 }
 
@@ -115,6 +117,9 @@
 @media screen and (min-width: 768px) {
   .dashboard-content {
     padding: 40px;
-    padding-bottom: 130px;
+  }
+  
+  .dashboard-screen {
+    padding-bottom: calc(120px + env(safe-area-inset-bottom)); /* More space on larger screens */
   }
 }

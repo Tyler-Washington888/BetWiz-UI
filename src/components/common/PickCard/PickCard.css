@@ -13,6 +13,9 @@
   min-height: 280px;
   position: relative;
   cursor: pointer;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .pick-card.selected {
