@@ -20,6 +20,7 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
+  flex-shrink: 0;
 }
 
 .hamburger-line {
@@ -51,7 +52,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex: 1;
+}
+
+.dashboard-header .logo-container {
+  flex-direction: row;
+  position: relative;
+  right: 20px;
+}
+
+.dashboard-header .betwiz-horizontal-logo {
+  height: 26px;
+  width: auto;
+  max-width: 100%;
 }
 
 .betwiz-logo {
@@ -75,12 +87,14 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-shrink: 0;
 }
 
 .account-balance {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
   color: #333;
+  white-space: nowrap;
 }
 
 .add-money-btn {
@@ -118,12 +132,16 @@
   }
 
   .account-balance {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .add-money-btn {
     width: 36px;
     height: 36px;
+  }
+
+  .dashboard-header .betwiz-horizontal-logo {
+    height: 30px;
   }
 }
 
@@ -138,11 +156,15 @@
   }
 
   .account-balance {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .add-money-btn {
     width: 40px;
     height: 40px;
+  }
+
+  .dashboard-header .betwiz-horizontal-logo {
+    height: 34px;
   }
 }
