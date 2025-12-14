@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { SignupData } from "../../SignupFlow";
 import "./BirthdateCard.css";
-import { validateDateOfBirth } from "../../../../../utils/validation";
+import { validateDateOfBirth } from "../../../../../utils/validations/authValidation";
 
 interface BirthdateCardProps {
   data: SignupData;
@@ -19,11 +19,29 @@ const BirthdateCard: React.FC<BirthdateCardProps> = ({
   data,
   updateData,
   onNext,
-  onPrev,
+  onPrev: _onPrev,
   loading,
   error,
 }) => {
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
+
+  // Calculate date that would make user 21 years old
+  const getDefaultBirthdate = (): string => {
+    const today = new Date();
+    const twentyOneYearsAgo = new Date(
+      today.getFullYear() - 21,
+      today.getMonth(),
+      today.getDate()
+    );
+    return twentyOneYearsAgo.toISOString().split("T")[0]; // Format as YYYY-MM-DD
+  };
+
+  // Set default date if not already set
+  useEffect(() => {
+    if (!data.dateOfBirth) {
+      updateData("dateOfBirth", getDefaultBirthdate());
+    }
+  }, [data.dateOfBirth, updateData]);
 
   const handleFieldChange = (field: "dateOfBirth", value: string) => {
     updateData(field, value);
@@ -57,10 +75,7 @@ const BirthdateCard: React.FC<BirthdateCardProps> = ({
   return (
     <div className="birthdate-card">
       <div className="card-header">
-        <h2 className="card-title">Date of Birth</h2>
-        <p className="card-subtitle">
-          You must be 21 or older to create an account
-        </p>
+        <h2 className="card-title">Enter Your Date of Birth</h2>
       </div>
 
       <div className="card-content">
@@ -69,42 +84,33 @@ const BirthdateCard: React.FC<BirthdateCardProps> = ({
             Date of Birth
           </label>
           <input
-            type="text"
+            type="date"
             id="dateOfBirth"
             name="dateOfBirth"
             value={data.dateOfBirth}
             onChange={(e) => handleFieldChange("dateOfBirth", e.target.value)}
             className={`form-input ${fieldErrors.dateOfBirth ? "error" : ""}`}
-            placeholder="MM-DD-YYYY (e.g., 01-15-1990)"
-            maxLength={10}
+            style={{
+              position: "relative",
+              zIndex: 10,
+            }}
             required
           />
           {fieldErrors.dateOfBirth && (
             <div className="field-error">{fieldErrors.dateOfBirth}</div>
           )}
-          <div className="input-hint">
-            Format: MM-DD-YYYY (e.g., 01-15-1990)
-          </div>
+          <div className="input-hint">Click to open calendar picker</div>
         </div>
 
         {error && <div className="error-message">{error}</div>}
 
-        <div className="button-group">
-          <button
-            type="button"
-            className="back-button"
-            onClick={onPrev}
-            disabled={loading}>
-            Back
-          </button>
-          <button
-            type="button"
-            className="next-button"
-            onClick={handleNext}
-            disabled={loading}>
-            {loading ? "Processing..." : "Continue"}
-          </button>
-        </div>
+        <button
+          type="button"
+          className="next-button"
+          onClick={handleNext}
+          disabled={loading}>
+          {loading ? "Processing..." : "Continue"}
+        </button>
       </div>
     </div>
   );

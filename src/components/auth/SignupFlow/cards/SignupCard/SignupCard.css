@@ -57,7 +57,7 @@
 
 .form-input:focus {
   outline: none;
-  border-color: #4caf50;
+  border-color: #5dd8a1;
 }
 
 .form-input.error {
@@ -118,7 +118,7 @@
 .submit-button {
   flex: 2;
   padding: 14px;
-  background-color: #4caf50;
+  background-color: #5dd8a1;
   color: white;
   border: none;
   border-radius: 8px;
@@ -130,7 +130,7 @@
 
 .next-button:hover:not(:disabled),
 .submit-button:hover:not(:disabled) {
-  background-color: #45a049;
+  background-color: #5dd8a1;
 }
 
 .next-button:disabled,
@@ -143,7 +143,7 @@
 .single-button {
   width: 100%;
   padding: 14px;
-  background-color: #4caf50;
+  background-color: #5dd8a1;
   color: white;
   border: none;
   border-radius: 8px;
@@ -155,7 +155,7 @@
 }
 
 .single-button:hover:not(:disabled) {
-  background-color: #45a049;
+  background-color: #5dd8a1;
 }
 
 .single-button:disabled {

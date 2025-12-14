@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { SignupData } from "../../SignupFlow";
 import "./ContactInfoCard.css";
-import { validateEmail } from "../../../../../utils/validation";
+import { validateEmail } from "../../../../../utils/validations/authValidation";
 
 interface ContactInfoCardProps {
   data: SignupData;
@@ -19,7 +19,7 @@ const ContactInfoCard: React.FC<ContactInfoCardProps> = ({
   data,
   updateData,
   onNext,
-  onPrev,
+  onPrev: _onPrev,
   loading,
   error,
 }) => {
@@ -57,10 +57,7 @@ const ContactInfoCard: React.FC<ContactInfoCardProps> = ({
   return (
     <div className="contact-info-card">
       <div className="card-header">
-        <h2 className="card-title">Contact Information</h2>
-        <p className="card-subtitle">
-          We'll use this to send you important updates
-        </p>
+        <h2 className="card-title">Enter Your Email</h2>
       </div>
 
       <div className="card-content">
@@ -85,22 +82,13 @@ const ContactInfoCard: React.FC<ContactInfoCardProps> = ({
 
         {error && <div className="error-message">{error}</div>}
 
-        <div className="button-group">
-          <button
-            type="button"
-            className="back-button"
-            onClick={onPrev}
-            disabled={loading}>
-            Back
-          </button>
-          <button
-            type="button"
-            className="next-button"
-            onClick={handleNext}
-            disabled={loading}>
-            {loading ? "Processing..." : "Continue"}
-          </button>
-        </div>
+        <button
+          type="button"
+          className="next-button"
+          onClick={handleNext}
+          disabled={loading}>
+          {loading ? "Processing..." : "Continue"}
+        </button>
       </div>
     </div>
   );
