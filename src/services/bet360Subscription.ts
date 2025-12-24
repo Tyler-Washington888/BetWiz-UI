@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const API_BASE_URL = "http:
-const BET360_UI_URL = import.meta.env.VITE_BET360_UI_URL || "http:
+const API_BASE_URL = "http://localhost:5001";
+const BET360_UI_URL = import.meta.env.VITE_BET360_UI_URL || "http://localhost:5173";
 
 export interface SubscriptionResponse {
   message: string;
@@ -35,7 +35,7 @@ export const subscribeToBet360 = async (
   }
 
   const response = await axios.post<SubscriptionResponse>(
-    `${API_BASE_URL}/users/${userId}/subscribe`,
+    `${API_BASE_URL}/api/users/${userId}/subscribe`,
     { bet360Email },
     {
       headers: {

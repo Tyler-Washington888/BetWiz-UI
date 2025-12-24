@@ -47,11 +47,8 @@ const PickCard: React.FC<PickCardProps> = ({
     return homeTeam.split(" ").pop();
   };
 
-  const getPlayerImageUrl = () => {
-    if (pick.player.imageUrl) return pick.player.imageUrl;
-    return `https:
-      0
-    )}${pick.player.lastName.charAt(0)}`;
+  const getPlayerInitials = () => {
+    return `${pick.player.firstName.charAt(0)}${pick.player.lastName.charAt(0)}`.toUpperCase();
   };
 
   const formatStatType = (statType: string) => {
@@ -64,18 +61,24 @@ const PickCard: React.FC<PickCardProps> = ({
       onClick={() => onCardClick?.(pick._id)}
     >
       <div className="player-image-container">
-        <img
-          src={getPlayerImageUrl()}
-          alt={`${pick.player.firstName} ${pick.player.lastName}`}
-          className="player-image"
-          onError={(e) => {
-            const img = e.currentTarget;
-            img.onerror = null;
-            img.src = `https:
-              0
-            )}${pick.player.lastName.charAt(0)}`;
-          }}
-        />
+        {pick.player.imageUrl ? (
+          <img
+            src={pick.player.imageUrl}
+            alt={`${pick.player.firstName} ${pick.player.lastName}`}
+            className="player-image"
+            onError={(e) => {
+              const img = e.currentTarget;
+              img.style.display = "none";
+              const container = img.parentElement;
+              if (container) {
+                container.classList.add("show-initials");
+              }
+            }}
+          />
+        ) : null}
+        <div className="player-initials" data-initials={getPlayerInitials()}>
+          {getPlayerInitials()}
+        </div>
       </div>
 
       <div className="player-info">

@@ -15,7 +15,7 @@ export interface DepositResponse {
 
 export const makeDeposit = async (amount: number): Promise<DepositResponse> => {
   try {
-    const data = await makeAuthenticatedRequest("/checking-account/deposit", {
+    const data = await makeAuthenticatedRequest("/api/checking-account/deposit", {
       method: "PUT",
       body: JSON.stringify({ amount }),
     });

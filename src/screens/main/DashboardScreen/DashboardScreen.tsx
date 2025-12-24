@@ -33,7 +33,7 @@ const DashboardScreen: React.FC = () => {
   };
 
   const handleDownloadBet360 = () => {
-    window.open("https:
+    window.open("https://bet360.com", "_blank");
   };
 
   const handleLogout = () => {
@@ -41,7 +41,7 @@ const DashboardScreen: React.FC = () => {
     navigate("/login");
   };
 
-  const handleDeposit = (amount: number) => {
+  const handleDeposit = (_amount: number) => {
     
   };
 

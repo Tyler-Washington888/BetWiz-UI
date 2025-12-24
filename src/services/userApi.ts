@@ -1,6 +1,6 @@
 import { UserAccount } from "../contexts/UserContext";
 
-const API_BASE_URL = "http:
+const API_BASE_URL = "http://localhost:5001";
 
 
 const getAuthToken = (): string | null => {
@@ -41,7 +41,7 @@ export const makeAuthenticatedRequest = async (
 
 export const getUserAccount = async (): Promise<UserAccount> => {
   try {
-    const data = await makeAuthenticatedRequest("/users/profile");
+    const data = await makeAuthenticatedRequest("/api/users/profile");
 
     return {
       userId: data._id,
@@ -62,7 +62,7 @@ export const getUserAccount = async (): Promise<UserAccount> => {
 export const acknowledgeBetwizBet360Link = async (email: string) => {
   try {
     return await makeAuthenticatedRequest(
-      `/users/acknowledge-betwiz-bet360-link/${email}`,
+      `/api/users/acknowledge-betwiz-bet360-link/${email}`,
       {
         method: "PUT",
       }

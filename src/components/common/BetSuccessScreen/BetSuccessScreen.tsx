@@ -28,7 +28,7 @@ const BetSuccessScreen: React.FC<BetSuccessScreenProps> = ({ onClose }) => {
   }, []);
 
   const handleBet360Click = () => {
-    window.open("https:
+    window.open("https://bet360.com", "_blank");
   };
 
   return (

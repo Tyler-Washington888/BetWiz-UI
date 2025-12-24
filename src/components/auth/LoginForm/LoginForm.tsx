@@ -5,7 +5,7 @@ import Logo from "../../common/Logo/Logo";
 import { subscribeToBet360, getBet360ConnectUrl, getBet360SubscribeEmail, clearBet360Data } from "../../../services/bet360Subscription";
 import "./LoginForm.css";
 
-const BETWIZ_API_URL = import.meta.env.VITE_BETWIZ_API_URL || "http:
+const BETWIZ_API_URL = import.meta.env.VITE_BETWIZ_API_URL || "http://localhost:5001";
 
 const LoginForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -19,7 +19,7 @@ const LoginForm: React.FC = () => {
   const [subscribing, setSubscribing] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [autoApproving, setAutoApproving] = useState(false);
-  const { login, currentUser } = useAuth();
+  const { login } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
   const hasAutoApproved = useRef(false);
@@ -150,10 +150,7 @@ const LoginForm: React.FC = () => {
           
           const token = localStorage.getItem("authToken");
           if (token) {
-            
-            const BETWIZ_API_URL = import.meta.env.VITE_BETWIZ_API_URL || "http:
-            
-            
+            const BETWIZ_API_URL = import.meta.env.VITE_BETWIZ_API_URL || "http://localhost:5001";
             const form = document.createElement("form");
             form.method = "POST";
             form.action = `${BETWIZ_API_URL}/oauth/authorize`;
