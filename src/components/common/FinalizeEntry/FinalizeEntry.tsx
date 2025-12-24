@@ -29,7 +29,7 @@ const FinalizeEntry: React.FC<FinalizeEntryProps> = ({
   const [error, setError] = useState<string | null>(null);
   const [showSuccessScreen, setShowSuccessScreen] = useState(false);
 
-  // Calculate payout multiplier based on number of picks
+  
   const calculatePayoutMultiplier = (pickCount: number): number => {
     const powerMultipliers: { [key: number]: number } = {
       2: 2.5,
@@ -41,7 +41,7 @@ const FinalizeEntry: React.FC<FinalizeEntryProps> = ({
     return powerMultipliers[pickCount] || 1;
   };
 
-  // Get selected picks data
+  
   const selectedPicksData = picks.filter((pick) => selectedPicks[pick._id]);
   const pickCount = selectedPicksData.length;
   const payoutMultiplier = calculatePayoutMultiplier(pickCount);
@@ -51,7 +51,7 @@ const FinalizeEntry: React.FC<FinalizeEntryProps> = ({
   const handleSubmit = async () => {
     setError(null);
 
-    // Validation
+    
     if (wagerValue <= 0) {
       setError("Please enter a valid wager amount");
       return;
@@ -90,19 +90,19 @@ const FinalizeEntry: React.FC<FinalizeEntryProps> = ({
 
   const handleClearAll = () => {
     onClear();
-    onBack(); // Go back to dashboard
+    onBack(); 
   };
 
   const handleWagerChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
 
-    // Allow empty string
+    
     if (value === "") {
       setWagerAmount("");
       return;
     }
 
-    // Regex to validate: up to 5 digits before decimal, up to 3 digits after decimal
+    
     const regex = /^\d{0,5}(\.\d{0,3})?$/;
 
     if (regex.test(value)) {
@@ -143,7 +143,7 @@ const FinalizeEntry: React.FC<FinalizeEntryProps> = ({
             </div>
           </div>
 
-          {/* Bet Input Section */}
+          {}
           <div className="bet-input-section">
             <div className="wager-input-group">
               <label htmlFor="wager-amount">Wager Amount</label>
@@ -181,7 +181,7 @@ const FinalizeEntry: React.FC<FinalizeEntryProps> = ({
           </div>
         </div>
 
-        {/* Place Bet Button - Fixed at bottom */}
+        {}
         <button
           className="place-bet-btn-fixed"
           onClick={handleSubmit}
@@ -190,7 +190,7 @@ const FinalizeEntry: React.FC<FinalizeEntryProps> = ({
         </button>
       </div>
 
-      {/* Bet Success Screen */}
+      {}
       {showSuccessScreen && <BetSuccessScreen onClose={handleSuccessClose} />}
     </>
   );

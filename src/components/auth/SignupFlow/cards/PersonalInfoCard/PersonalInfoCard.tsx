@@ -33,7 +33,7 @@ const PersonalInfoCard: React.FC<PersonalInfoCardProps> = ({
   ) => {
     updateData(field, value);
 
-    // Clear error when user starts typing
+    
     if (fieldErrors[field]) {
       setFieldErrors((prev) => ({
         ...prev,
@@ -58,7 +58,7 @@ const PersonalInfoCard: React.FC<PersonalInfoCardProps> = ({
 
     setFieldErrors(errors);
 
-    // Only proceed if validation passes
+    
     if (Object.keys(errors).length === 0) {
       onNext();
     }

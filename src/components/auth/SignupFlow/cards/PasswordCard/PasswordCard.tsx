@@ -16,6 +16,7 @@ interface PasswordCardProps {
   isLastStep: boolean;
   loading: boolean;
   error: string;
+  isBet360Flow?: boolean;
 }
 
 const PasswordCard: React.FC<PasswordCardProps> = ({
@@ -25,6 +26,7 @@ const PasswordCard: React.FC<PasswordCardProps> = ({
   onSubmit,
   loading,
   error,
+  isBet360Flow = false,
 }) => {
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
   const [showPassword, setShowPassword] = useState(false);
@@ -37,7 +39,7 @@ const PasswordCard: React.FC<PasswordCardProps> = ({
   ) => {
     updateData(field, value);
 
-    // Clear error when user starts typing
+    
     if (fieldErrors[field]) {
       setFieldErrors((prev) => ({
         ...prev,
@@ -65,7 +67,7 @@ const PasswordCard: React.FC<PasswordCardProps> = ({
 
     setFieldErrors(errors);
 
-    // Only proceed if validation passes
+    
     if (Object.keys(errors).length === 0) {
       onSubmit();
     }
@@ -224,7 +226,9 @@ const PasswordCard: React.FC<PasswordCardProps> = ({
           className="submit-button"
           onClick={handleSubmit}
           disabled={loading}>
-          {loading ? "Creating Account..." : "Create Account"}
+          {loading 
+            ? (isBet360Flow ? "Creating Account & Connecting..." : "Creating Account...") 
+            : (isBet360Flow ? "Create Account & Connect to Bet360" : "Create Account")}
         </button>
       </div>
     </div>

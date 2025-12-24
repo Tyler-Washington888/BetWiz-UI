@@ -1,12 +1,12 @@
-/* Mobile First Dashboard Styles */
+
 .dashboard-screen {
   width: 100%;
   background-color: #f8f9fa;
   display: block;
   overflow-x: hidden;
   position: relative;
-  /* Button height: min-height 60px + padding 16px top + 16px bottom + safe area = ~92px minimum */
-  padding-bottom: calc(100px + env(safe-area-inset-bottom)); /* Enough space for fixed button at 100% zoom */
+  
+  padding-bottom: calc(100px + env(safe-area-inset-bottom)); 
   min-height: 100vh;
 }
 
@@ -40,7 +40,7 @@
   font-size: 16px;
 }
 
-/* Loading and Error States */
+
 .loading-container {
   display: flex;
   flex-direction: column;
@@ -99,32 +99,32 @@
   background-color: #5dd8a1;
 }
 
-/* Small iPhone (iPhone 12/13/14: 390px) */
+
 @media screen and (min-width: 390px) {
   .dashboard-content {
     padding: 24px;
   }
 }
 
-/* Standard iPhone (iPhone 14 Pro Max: 430px) */
+
 @media screen and (min-width: 430px) {
   .dashboard-content {
     padding: 28px;
   }
 }
 
-/* Small iPad (iPad Mini: 768px) */
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .dashboard-content {
     padding: 40px;
   }
   
   .dashboard-screen {
-    padding-bottom: calc(120px + env(safe-area-inset-bottom)); /* More space on larger screens */
+    padding-bottom: calc(120px + env(safe-area-inset-bottom)); 
   }
 }
 
-/* Large iPad (iPad Pro 12.9": 1024px - 1366px) */
+
 @media screen and (min-width: 1024px) and (max-width: 1366px) {
   .dashboard-content {
     padding: 50px;

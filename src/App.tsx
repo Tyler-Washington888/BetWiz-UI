@@ -15,7 +15,9 @@ function App() {
         <div className="App">
           <Routes>
             <Route path="/login" element={<LoginScreen />} />
+            <Route path="/login/bet360" element={<LoginScreen />} />
             <Route path="/signup" element={<SignupScreen />} />
+            <Route path="/signup/bet360" element={<SignupScreen />} />
             <Route
               path="/dashboard"
               element={

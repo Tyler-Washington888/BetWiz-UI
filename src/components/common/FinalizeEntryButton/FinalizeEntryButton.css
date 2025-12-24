@@ -7,7 +7,7 @@
   border-top: 1px solid #e0e0e0;
   box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.1);
   z-index: 1000;
-  /* Add safe area padding for devices with home indicators */
+  
   padding-bottom: calc(16px + env(safe-area-inset-bottom));
 
   border-radius: 0;

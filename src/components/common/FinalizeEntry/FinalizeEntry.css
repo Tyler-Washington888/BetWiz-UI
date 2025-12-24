@@ -1,4 +1,4 @@
-/* Mobile First Finalize Entry Styles */
+
 .finalize-entry-container {
   display: flex;
   flex-direction: column;
@@ -17,7 +17,7 @@
   width: 100%;
 }
 
-/* Selected Picks Section */
+
 .selected-picks-section {
   background: transparent;
   padding: 0;
@@ -61,7 +61,7 @@
   gap: 20px;
 }
 
-/* Horizontal Pick Card Styles for Finalize Entry */
+
 .selected-picks-grid .pick-card {
   flex-direction: row;
   min-height: 90px;
@@ -129,17 +129,17 @@
   font-weight: 700;
 }
 
-/* Hide unselected buttons in finalize entry */
+
 .selected-picks-grid .action-btn:not(.selected) {
   display: none;
 }
 
-/* Make selected button more prominent */
+
 .selected-picks-grid .action-btn.selected {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* Bet Input Section */
+
 .bet-input-section {
   background: white;
   border-radius: 12px;
@@ -190,7 +190,7 @@
   border-color: #5dd8a1;
 }
 
-/* Payout Info */
+
 .payout-info {
   display: flex;
   flex-direction: column;
@@ -221,7 +221,7 @@
   font-size: 20px;
 }
 
-/* Error Message */
+
 .error-message {
   background: #fee;
   color: #ef4444;
@@ -232,7 +232,7 @@
   border: 1px solid #fcc;
 }
 
-/* Place Bet Button - Fixed at Bottom */
+
 .place-bet-btn-fixed {
   position: fixed;
   bottom: 0;
@@ -251,7 +251,7 @@
   z-index: 1000;
   border-top: 1px solid #e0e0e0;
   min-height: 75px;
-  /* Add safe area padding for devices with home indicators */
+  
   padding-bottom: calc(20px + env(safe-area-inset-bottom));
 }
 
@@ -273,7 +273,7 @@
   border: 2px solid #d1d5db;
 }
 
-/* Tablet styles */
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .finalize-entry-container {
     padding-bottom: calc(105px + env(safe-area-inset-bottom));
@@ -341,7 +341,7 @@
   }
 }
 
-/* Large iPad (iPad Pro 12.9": 1024px - 1366px) - Keep vertical */
+
 @media screen and (min-width: 1024px) and (max-width: 1366px) {
   .finalize-entry-container {
     padding-bottom: calc(115px + env(safe-area-inset-bottom));
@@ -413,7 +413,7 @@
   }
 }
 
-/* Desktop styles - Only for screens larger than largest tablet (1367px+) */
+
 @media screen and (min-width: 1367px) {
   .finalize-entry-container {
     padding-bottom: calc(115px + env(safe-area-inset-bottom));

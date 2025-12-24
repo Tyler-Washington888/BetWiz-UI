@@ -11,14 +11,13 @@ const AuthLayout: React.FC<AuthLayoutProps> = ({ children }) => {
 
   useEffect(() => {
     const checkScreenSize = () => {
-      // Show modal for screens larger than largest iPad (1366px)
-      setShowModal(window.innerWidth > 1366);
+      setShowModal(window.innerWidth >= 1367);
     };
 
-    // Check on mount
+    
     checkScreenSize();
 
-    // Check on resize
+    
     window.addEventListener("resize", checkScreenSize);
 
     return () => {

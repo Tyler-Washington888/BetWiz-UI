@@ -1,4 +1,4 @@
-/* Mobile First Dashboard Header */
+
 .dashboard-header {
   display: flex;
   align-items: center;
@@ -11,7 +11,7 @@
   z-index: 100;
 }
 
-/* Hamburger Menu */
+
 .hamburger-menu {
   background: none;
   border: none;
@@ -35,7 +35,7 @@
   background-color: #5dd8a1;
 }
 
-/* Back Arrow */
+
 .back-arrow {
   font-size: 24px;
   color: #333;
@@ -47,7 +47,7 @@
   color: #5dd8a1;
 }
 
-/* Logo Section */
+
 .logo-section {
   display: flex;
   align-items: center;
@@ -82,7 +82,7 @@
   color: #ff5c40;
 }
 
-/* Account Section */
+
 .account-section {
   display: flex;
   align-items: center;
@@ -121,7 +121,7 @@
   line-height: 1;
 }
 
-/* Tablet styles */
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .dashboard-header {
     padding: 20px 40px;
@@ -145,7 +145,7 @@
   }
 }
 
-/* Desktop styles */
+
 @media screen and (min-width: 1025px) {
   .dashboard-header {
     padding: 24px 60px;

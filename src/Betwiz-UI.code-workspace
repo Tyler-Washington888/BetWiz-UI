@@ -7,7 +7,16 @@
       "path": "../../Betwiz-API"
     },
     {
-      "path": "../../../projects/meta-minds/Meta-Minds/meta-minds-fe"
+      "path": "../../WinningEdge-API"
+    },
+    {
+      "path": "../../WinningEdge-UI"
+    },
+    {
+      "path": "../../Bet360-API"
+    },
+    {
+      "path": "../../Bet360-UI"
     }
   ],
   "settings": {}

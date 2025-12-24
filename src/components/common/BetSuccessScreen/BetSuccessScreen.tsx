@@ -11,12 +11,12 @@ const BetSuccessScreen: React.FC<BetSuccessScreenProps> = ({ onClose }) => {
   const [showBanner, setShowBanner] = useState(false);
 
   useEffect(() => {
-    // Show banner after a short delay
+    
     const bannerTimer = setTimeout(() => {
       setShowBanner(true);
     }, 500);
 
-    // Hide toast after 5 seconds
+    
     const toastTimer = setTimeout(() => {
       setShowToast(false);
     }, 5000);
@@ -28,7 +28,7 @@ const BetSuccessScreen: React.FC<BetSuccessScreenProps> = ({ onClose }) => {
   }, []);
 
   const handleBet360Click = () => {
-    console.log("bet360");
+    window.open("https:
   };
 
   return (

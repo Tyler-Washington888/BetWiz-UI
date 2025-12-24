@@ -1,4 +1,4 @@
-// Signup flow step validation utilities
+
 import { FieldValidation } from "./types";
 import {
   validateEmail,
@@ -9,7 +9,7 @@ import {
   validateDateOfBirth,
 } from "./authValidation";
 
-// Validate all fields for a signup step
+
 export const validateSignupStep = (
   step: string,
   data: Record<string, any>
@@ -45,12 +45,12 @@ export const validateSignupStep = (
   return errors;
 };
 
-// Check if a step is valid
+
 export const isStepValid = (errors: FieldValidation): boolean => {
   return Object.values(errors).every((result) => result.isValid);
 };
 
-// Get first error message for a step
+
 export const getFirstError = (errors: FieldValidation): string | null => {
   for (const result of Object.values(errors)) {
     if (!result.isValid && result.error) {

@@ -20,7 +20,8 @@ export interface User {
   lastname: string;
   email: string;
   dateOfBirth: string;
-  linkedBet360Account: boolean;
+  isSubscribed?: boolean;
+  subscribedBet360Emails?: string[];
   role: string;
   createdAt?: Date;
   updatedAt?: Date;
@@ -32,7 +33,8 @@ export interface AuthResponse {
   lastname: string;
   email: string;
   dateOfBirth: string;
-  linkedBet360Account: boolean;
+  isSubscribed?: boolean;
+  subscribedBet360Emails?: string[];
   role: string;
   token: string;
   creditBalance: number;
@@ -41,13 +43,13 @@ export interface AuthResponse {
 const formatDateOfBirthForApi = (dateOfBirthRaw: string): string => {
   const dob = (dateOfBirthRaw || "").trim();
 
-  // Native <input type="date"> gives YYYY-MM-DD
+  
   if (/^\d{4}-\d{2}-\d{2}$/.test(dob)) {
     const [yyyy, mm, dd] = dob.split("-");
     return `${mm}-${dd}-${yyyy}`;
   }
 
-  // Handle common variants
+  
   if (/^\d{2}\/\d{2}\/\d{4}$/.test(dob)) {
     const [mm, dd, yyyy] = dob.split("/");
     return `${mm}-${dd}-${yyyy}`;
@@ -58,7 +60,7 @@ const formatDateOfBirthForApi = (dateOfBirthRaw: string): string => {
     return `${mm}-${dd}-${yyyy}`;
   }
 
-  // Already in the backend format (MM-DD-YYYY) or unknown; pass through.
+  
   return dob;
 };
 
@@ -67,7 +69,7 @@ export const loginUser = async (loginData: LoginData): Promise<User> => {
   localStorage.setItem("authToken", resp.data.token);
   api.defaults.headers.common.authorization = `Bearer ${resp.data.token}`;
 
-  // Extract user data without token
+  
   const { token, ...userData } = resp.data;
   return userData;
 };
@@ -87,7 +89,7 @@ export const registerUser = async (
   localStorage.setItem("authToken", resp.data.token);
   api.defaults.headers.common.authorization = `Bearer ${resp.data.token}`;
 
-  // Extract user data without token
+  
   const { token, ...userData } = resp.data;
   return userData;
 };

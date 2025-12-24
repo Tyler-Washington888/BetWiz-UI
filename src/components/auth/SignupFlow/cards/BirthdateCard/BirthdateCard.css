@@ -1,4 +1,4 @@
-/* Birthdate Card Styles */
+
 .birthdate-card {
   width: 100%;
   min-height: 100%;
@@ -68,13 +68,13 @@
   color: #999;
 }
 
-/* Date input container for better positioning */
+
 .form-group {
   position: relative;
   z-index: 1;
 }
 
-/* Date input specific styling */
+
 .form-input[type="date"] {
   cursor: pointer;
   position: relative;
@@ -97,30 +97,30 @@
   opacity: 1;
 }
 
-/* Force date picker to open above */
+
 .form-input[type="date"]::-webkit-datetime-edit {
   position: relative;
   z-index: 1;
 }
 
-/* Ensure the date picker opens above when focused */
+
 .form-input[type="date"]:focus {
   position: relative;
   z-index: 10;
 }
 
-/* Force the date picker popup to appear above */
+
 .form-input[type="date"]::-webkit-calendar-picker-indicator:active {
   position: relative;
   z-index: 15;
 }
 
-/* Additional CSS to force upward positioning */
+
 .form-input[type="date"]::-webkit-calendar-picker-indicator {
   transform: translateY(-5px);
 }
 
-/* Target the actual date picker popup */
+
 .form-input[type="date"]::-webkit-calendar-picker-indicator:focus {
   transform: translateY(-10px);
   z-index: 20;
@@ -176,7 +176,7 @@
   cursor: not-allowed;
 }
 
-/* Tablet styles */
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .birthdate-card {
     padding: 40px;
@@ -192,7 +192,7 @@
   }
 }
 
-/* Large iPad (iPad Pro 12.9": 1024px - 1366px) */
+
 @media screen and (min-width: 1024px) and (max-width: 1366px) {
   .birthdate-card {
     padding: 50px;

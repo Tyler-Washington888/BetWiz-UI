@@ -1,7 +1,7 @@
-// Authentication and user information validation utilities
+
 import { ValidationResult } from "./types";
 
-// ====== EMAIL VALIDATION ======
+
 export const validateEmail = (email: string): ValidationResult => {
   if (!email.trim()) {
     return { isValid: false, error: "Email is required" };
@@ -15,7 +15,7 @@ export const validateEmail = (email: string): ValidationResult => {
   return { isValid: true };
 };
 
-// ====== PASSWORD VALIDATION ======
+
 export const validatePassword = (password: string): ValidationResult => {
   if (!password) {
     return { isValid: false, error: "Password is required" };
@@ -51,7 +51,7 @@ export const validateConfirmPassword = (
   return { isValid: true };
 };
 
-// ====== NAME VALIDATION ======
+
 export const validateFirstName = (firstname: string): ValidationResult => {
   if (!firstname.trim()) {
     return { isValid: false, error: "First name is required" };
@@ -84,13 +84,13 @@ export const validateLastName = (lastname: string): ValidationResult => {
   return { isValid: true };
 };
 
-// ====== DATE OF BIRTH VALIDATION ======
+
 export const validateDateOfBirth = (dateOfBirth: string): ValidationResult => {
   if (!dateOfBirth) {
     return { isValid: false, error: "Date of birth is required" };
   }
 
-  // Validate YYYY-MM-DD format (HTML5 date input format)
+  
   const dateRegex = /^(19|20)\d{2}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$/;
   if (!dateRegex.test(dateOfBirth)) {
     return {
@@ -99,24 +99,24 @@ export const validateDateOfBirth = (dateOfBirth: string): ValidationResult => {
     };
   }
 
-  // Validate month and day ranges
+  
   const [year, month, day] = dateOfBirth.split("-").map(Number);
 
-  // Check month range
+  
   if (month < 1 || month > 12) {
     return { isValid: false, error: "Please provide a valid month (01-12)" };
   }
 
-  // Days in each month (non-leap year)
+  
   const daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
-  // Check for leap year and adjust February
+  
   const isLeapYear = (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
   if (isLeapYear && month === 2) {
     daysInMonth[1] = 29;
   }
 
-  // Check day range for the specific month
+  
   if (day < 1 || day > daysInMonth[month - 1]) {
     return {
       isValid: false,
@@ -124,7 +124,7 @@ export const validateDateOfBirth = (dateOfBirth: string): ValidationResult => {
     };
   }
 
-  // Check age requirement (21+)
+  
   const birthDate = new Date(year, month - 1, day);
   const today = new Date();
   const age = today.getFullYear() - birthDate.getFullYear();

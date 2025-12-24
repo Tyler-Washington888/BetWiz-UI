@@ -1,4 +1,4 @@
-/* Mobile First - Default styles for mobile */
+
 .auth-layout {
   min-height: 100vh;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -23,7 +23,7 @@
   box-sizing: border-box;
 }
 
-/* Tablet styles */
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .auth-layout {
     padding: 0;
@@ -39,14 +39,14 @@
   }
 }
 
-/* Large iPad (iPad Pro 12.9" landscape: 1366px) */
+
 @media screen and (min-width: 1024px) and (max-width: 1366px) {
   .auth-container {
     padding: 50px;
   }
 }
 
-/* Desktop - Adjust background when modal is shown */
+
 @media screen and (min-width: 1367px) {
   .auth-layout {
     background: #f5f5f5;

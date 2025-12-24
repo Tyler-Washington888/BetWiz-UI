@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(255, 255, 255, 1); /* Solid white background */
+  background-color: rgba(255, 255, 255, 1); 
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -17,7 +17,7 @@
   background-color: white;
   border-radius: 16px;
   width: 100%;
-  max-width: 430px; /* Largest iPhone width */
+  max-width: 430px; 
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   position: relative;
   display: flex;
@@ -162,7 +162,7 @@
   }
 }
 
-/* Tablet styles */
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .deposit-modal-overlay {
     padding: 40px;
@@ -174,7 +174,7 @@
   }
 }
 
-/* Desktop styles */
+
 @media screen and (min-width: 1025px) {
   .deposit-modal-overlay {
     padding: 60px;

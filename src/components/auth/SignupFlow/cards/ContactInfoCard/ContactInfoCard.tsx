@@ -28,7 +28,7 @@ const ContactInfoCard: React.FC<ContactInfoCardProps> = ({
   const handleFieldChange = (field: "email", value: string) => {
     updateData(field, value);
 
-    // Clear error when user starts typing
+    
     if (fieldErrors[field]) {
       setFieldErrors((prev) => ({
         ...prev,
@@ -48,7 +48,7 @@ const ContactInfoCard: React.FC<ContactInfoCardProps> = ({
 
     setFieldErrors(errors);
 
-    // Only proceed if validation passes
+    
     if (Object.keys(errors).length === 0) {
       onNext();
     }

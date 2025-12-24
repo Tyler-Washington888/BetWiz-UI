@@ -25,7 +25,7 @@ const BirthdateCard: React.FC<BirthdateCardProps> = ({
 }) => {
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
 
-  // Calculate date that would make user 21 years old
+  
   const getDefaultBirthdate = (): string => {
     const today = new Date();
     const twentyOneYearsAgo = new Date(
@@ -33,10 +33,10 @@ const BirthdateCard: React.FC<BirthdateCardProps> = ({
       today.getMonth(),
       today.getDate()
     );
-    return twentyOneYearsAgo.toISOString().split("T")[0]; // Format as YYYY-MM-DD
+    return twentyOneYearsAgo.toISOString().split("T")[0]; 
   };
 
-  // Set default date if not already set
+  
   useEffect(() => {
     if (!data.dateOfBirth) {
       updateData("dateOfBirth", getDefaultBirthdate());
@@ -46,7 +46,7 @@ const BirthdateCard: React.FC<BirthdateCardProps> = ({
   const handleFieldChange = (field: "dateOfBirth", value: string) => {
     updateData(field, value);
 
-    // Clear error when user starts typing
+    
     if (fieldErrors[field]) {
       setFieldErrors((prev) => ({
         ...prev,
@@ -66,7 +66,7 @@ const BirthdateCard: React.FC<BirthdateCardProps> = ({
 
     setFieldErrors(errors);
 
-    // Only proceed if validation passes
+    
     if (Object.keys(errors).length === 0) {
       onNext();
     }

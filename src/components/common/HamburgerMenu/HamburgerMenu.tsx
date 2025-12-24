@@ -38,7 +38,7 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
           ×
         </button>
 
-        {/* Account Balance Card */}
+        {}
         <div className="balance-card">
           <div className="balance-row">
             <div className="balance-item">
@@ -55,7 +55,7 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
           </button>
         </div>
 
-        {/* Download Bet360 Button - Only show if not linked to Bet360 */}
+        {}
         {!userAccount.linkedToBet360 && (
           <button className="download-bet360-btn" onClick={onDownloadBet360}>
             <img
@@ -67,7 +67,7 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
           </button>
         )}
 
-        {/* Footer with Logout and Logo */}
+        {}
         <div className="menu-footer">
           <button className="logout-btn" onClick={onLogout}>
             Logout
@@ -78,7 +78,7 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
         </div>
       </div>
 
-      {/* Deposit Modal */}
+      {}
       <DepositModal
         isOpen={isDepositModalOpen}
         onClose={() => setIsDepositModalOpen(false)}

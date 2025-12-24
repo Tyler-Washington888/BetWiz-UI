@@ -1,7 +1,7 @@
-/* Mobile First Pick Grid Styles */
+
 .pick-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* 2 columns on mobile */
+  grid-template-columns: 1fr 1fr; 
   gap: 16px;
   padding: 20px;
   width: 100%;
@@ -11,7 +11,7 @@
   justify-items: center;
 }
 
-/* Tablet styles - slightly larger cards */
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .pick-grid {
     gap: 20px;
@@ -20,7 +20,7 @@
   }
 }
 
-/* Desktop styles - larger cards with more spacing */
+
 @media screen and (min-width: 1025px) {
   .pick-grid {
     gap: 24px;
@@ -29,10 +29,10 @@
   }
 }
 
-/* Large desktop - could potentially show 4 cards in a row */
+
 @media screen and (min-width: 1400px) {
   .pick-grid {
-    grid-template-columns: repeat(4, 1fr); /* 4 columns on very large screens */
+    grid-template-columns: repeat(4, 1fr); 
     gap: 28px;
     padding: 40px;
     max-width: 1400px;

@@ -82,7 +82,7 @@
   margin-bottom: 0;
 }
 
-/* Responsive adjustments for modal */
+
 @media screen and (max-width: 600px) {
   .not-available-modal {
     max-width: 90%;

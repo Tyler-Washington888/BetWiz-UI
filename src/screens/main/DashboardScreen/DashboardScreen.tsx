@@ -33,7 +33,7 @@ const DashboardScreen: React.FC = () => {
   };
 
   const handleDownloadBet360 = () => {
-    console.log("https://bet360.com");
+    window.open("https:
   };
 
   const handleLogout = () => {
@@ -42,8 +42,7 @@ const DashboardScreen: React.FC = () => {
   };
 
   const handleDeposit = (amount: number) => {
-    console.log(`Depositing $${amount}`);
-    // TODO: Implement actual deposit functionality
+    
   };
 
   const handleDepositClick = () => {
@@ -106,7 +105,6 @@ const DashboardScreen: React.FC = () => {
       setPicks(availablePicks);
     } catch (err) {
       setPicksError("Failed to load picks");
-      console.error("Error fetching picks:", err);
     } finally {
       setPicksLoading(false);
     }

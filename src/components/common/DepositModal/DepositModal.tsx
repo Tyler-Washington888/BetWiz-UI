@@ -38,14 +38,14 @@ const DepositModal: React.FC<DepositModalProps> = ({
       const result = await makeDeposit(depositAmount);
 
       if (result.success) {
-        // Update balance instantly in the UI
+        
         if (userAccount && result.newBalance !== undefined) {
           updateBalance(result.newBalance);
         }
 
         onDeposit(depositAmount);
         onClose();
-        // Navigate to dashboard after successful deposit
+        
         navigate("/dashboard");
       } else {
         setError(result.message || "Deposit failed");
@@ -61,17 +61,17 @@ const DepositModal: React.FC<DepositModalProps> = ({
   const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
 
-    // Remove any non-numeric characters except decimal point
+    
     const cleanValue = value.replace(/[^\d.]/g, "");
 
-    // Check if it's a valid number format
+    
     if (/^\d*\.?\d*$/.test(cleanValue)) {
-      // Split by decimal point to check length restrictions
+      
       const parts = cleanValue.split(".");
       const integerPart = parts[0];
       const decimalPart = parts[1] || "";
 
-      // Max 5 digits before decimal, max 3 digits after decimal
+      
       if (integerPart.length <= 5 && decimalPart.length <= 3) {
         setAmount(cleanValue);
       }

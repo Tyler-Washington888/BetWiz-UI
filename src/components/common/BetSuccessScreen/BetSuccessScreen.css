@@ -123,7 +123,7 @@
   transform: scale(1.1);
 }
 
-/* Responsive styles */
+
 @media screen and (max-width: 768px) {
   .banner-container {
     width: 85%;

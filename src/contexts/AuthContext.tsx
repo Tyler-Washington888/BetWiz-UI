@@ -15,14 +15,14 @@ import {
 
 interface AuthContextType {
   currentUser: User | null;
-  login: (email: string, password: string) => Promise<void>;
+  login: (email: string, password: string) => Promise<User>;
   register: (
     firstname: string,
     lastname: string,
     email: string,
     password: string,
     dateOfBirth: string
-  ) => Promise<void>;
+  ) => Promise<User>;
   logout: () => void;
   loading: boolean;
 }
@@ -51,7 +51,6 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         const userData = await verifyUser();
         setCurrentUser(userData);
       } catch (error) {
-        console.error("Verification failed:", error);
         setCurrentUser(null);
       } finally {
         setLoading(false);
@@ -64,8 +63,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     try {
       const userData = await loginUser({ email, password });
       setCurrentUser(userData);
+      return userData;
     } catch (error) {
-      console.error("Login failed:", error);
       throw error;
     }
   };
@@ -86,8 +85,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         dateOfBirth,
       });
       setCurrentUser(userData);
+      return userData;
     } catch (error) {
-      console.error("Registration failed:", error);
       throw error;
     }
   };

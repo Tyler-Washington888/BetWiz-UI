@@ -49,7 +49,7 @@ const PickCard: React.FC<PickCardProps> = ({
 
   const getPlayerImageUrl = () => {
     if (pick.player.imageUrl) return pick.player.imageUrl;
-    return `https://via.placeholder.com/150x150/4A90E2/FFFFFF?text=${pick.player.firstName.charAt(
+    return `https:
       0
     )}${pick.player.lastName.charAt(0)}`;
   };
@@ -71,7 +71,7 @@ const PickCard: React.FC<PickCardProps> = ({
           onError={(e) => {
             const img = e.currentTarget;
             img.onerror = null;
-            img.src = `https://via.placeholder.com/150x150/4A90E2/FFFFFF?text=${pick.player.firstName.charAt(
+            img.src = `https:
               0
             )}${pick.player.lastName.charAt(0)}`;
           }}

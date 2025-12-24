@@ -35,9 +35,9 @@ export const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
   const [userAccount, setUserAccount] = useState<UserAccount | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const { currentUser } = useAuth(); // Get current user from auth context
+  const { currentUser } = useAuth(); 
 
-  // Real API call to backend
+  
   const fetchUserAccount = async (): Promise<UserAccount> => {
     return await getUserAccount();
   };
@@ -51,7 +51,6 @@ export const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
       setUserAccount(account);
     } catch (err) {
       setError("Failed to fetch account data");
-      console.error("Error fetching user account:", err);
     } finally {
       setLoading(false);
     }
@@ -66,12 +65,12 @@ export const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
     }
   };
 
-  // Load account data only when user is authenticated
+  
   useEffect(() => {
     if (currentUser) {
       refreshAccount();
     } else {
-      // Clear account data when user logs out
+      
       setUserAccount(null);
       setError(null);
     }

@@ -1,4 +1,4 @@
-/* Mobile First - Default styles for mobile */
+
 .login-form {
   width: 100%;
   max-width: 400px;
@@ -55,7 +55,7 @@
   color: #999;
 }
 
-/* Password input container */
+
 .password-input-container {
   position: relative;
   display: flex;
@@ -63,7 +63,7 @@
 }
 
 .password-input {
-  padding-right: 50px; /* Make room for toggle button */
+  padding-right: 50px; 
 }
 
 .password-toggle {
@@ -99,6 +99,81 @@
   text-align: center;
 }
 
+.subscription-loading-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #ff5c40;
+  font-size: 14px;
+  margin-bottom: 15px;
+  text-align: center;
+  padding: 12px;
+  background-color: #fff3e0;
+  border-radius: 8px;
+  border: 1px solid #ff5c40;
+}
+
+.loading-spinner-small {
+  border: 2px solid rgba(255, 92, 64, 0.3);
+  border-top: 2px solid #ff5c40;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.subscription-success-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #10b981;
+  font-size: 14px;
+  margin-bottom: 15px;
+  text-align: center;
+  padding: 12px;
+  background-color: #d1fae5;
+  border-radius: 8px;
+  border: 1px solid #10b981;
+}
+
+.subscription-success-message .success-icon {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.subscription-success-message small {
+  display: block;
+  margin-top: 8px;
+  font-size: 12px;
+  color: #666;
+  width: 100%;
+}
+
+.subscription-error-message {
+  color: #f44336;
+  font-size: 14px;
+  margin-bottom: 15px;
+  text-align: center;
+  padding: 12px;
+  background-color: #ffebee;
+  border-radius: 8px;
+  border: 1px solid #f44336;
+}
+
+.subscription-error-message small {
+  display: block;
+  margin-top: 8px;
+  font-size: 12px;
+  color: #666;
+}
+
 .login-button {
   width: 100%;
   padding: 14px;
@@ -119,6 +194,14 @@
 .login-button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
+}
+
+.login-subtitle {
+  text-align: center;
+  color: rgba(51, 51, 51, 0.7);
+  font-size: 13px;
+  margin-top: 8px;
+  font-weight: 400;
 }
 
 .signup-section {
@@ -150,7 +233,7 @@
   background-color: #5dd8a1;
 }
 
-/* Tablet styles */
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .login-form {
     max-width: 450px;
@@ -169,7 +252,7 @@
   }
 }
 
-/* Large iPad (iPad Pro 12.9": 1024px - 1366px) */
+
 @media screen and (min-width: 1024px) and (max-width: 1366px) {
   .login-form {
     max-width: 500px;
@@ -188,7 +271,7 @@
   }
 }
 
-/* Desktop - Show not available message */
+
 @media screen and (min-width: 1367px) {
   .login-form {
     display: none;
